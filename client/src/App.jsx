@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Square from "./components/square";
+import Square from "./components/Square";
 import { io } from "socket.io-client";
 import Swal from "sweetalert2";
 
