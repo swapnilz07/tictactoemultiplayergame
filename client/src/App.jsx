@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Square from "./components/square/square";
+import Square from "./components/square";
 import { io } from "socket.io-client";
 import Swal from "sweetalert2";
 
@@ -131,7 +131,7 @@ function App() {
     const username = result.value;
     setPlayerName(username);
 
-    const newSocket = io("http://localhost:5000", {
+    const newSocket = io("https://tictactoemultiplayergame.onrender.com", {
       autoConnect: true,
     });
 

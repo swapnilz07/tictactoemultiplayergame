@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import CircleIcon from "../../assets/circle.png";
-import CrossIcon from "../../assets/cross.png";
+import CircleIcon from "../assets/circle.png";
+import CrossIcon from "../assets/cross.png";
 
 export default function Square({
   id,
