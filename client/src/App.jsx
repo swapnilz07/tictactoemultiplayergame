@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./App.css";
 import Square from "./components/Square";
 import { io } from "socket.io-client";
@@ -21,7 +21,7 @@ function App() {
   const [opponentName, setOpponentName] = useState(null);
   const [playingAs, setPlayingAs] = useState(null);
 
-  const checkWinner = () => {
+  const checkWinner = useCallback(() => {
     // Row check
     for (let row = 0; row < gameState.length; row++) {
       if (
@@ -73,14 +73,14 @@ function App() {
     if (isMatchDraw) return "draw";
 
     return null;
-  };
+  }, [gameState]);
 
   useEffect(() => {
     const winner = checkWinner();
     if (winner) {
       setFinishedState(winner);
     }
-  }, [gameState]);
+  }, [gameState, checkWinner]);
 
   const takePlayerName = async () => {
     const result = await Swal.fire({
