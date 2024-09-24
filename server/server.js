@@ -6,7 +6,7 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: "https://tictactoemultiplayergame.vercel.app/",
+    origin: "https://tictactoemultiplayergame-client.onrender.com/",
     methods: ["GET", "POST"],
   },
 });
